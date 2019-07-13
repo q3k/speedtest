@@ -18,6 +18,8 @@ import (
 	"crypto/rand"
 	"encoding/json"
 	"flag"
+	"io"
+	"io/ioutil"
 	"net"
 	"net/http"
 	"strconv"
@@ -67,6 +69,10 @@ func remoteIP(r *http.Request) net.IP {
 	return net.ParseIP(remote)
 }
 
+func init() {
+	flag.Set("logtostderr", "true")
+}
+
 func main() {
 	flag.StringVar(&flagBind, "bind", "0.0.0.0:8080", "Address at which to serve HTTP requests")
 	flag.BoolVar(&flagUseForwardedFor, "use_forwarded_for", false, "Honor X-Forwarded-For headers to detect user IP")
@@ -76,6 +82,7 @@ func main() {
 		noCache(w)
 		w.Header().Add("Connection", "keep-alive")
 		w.WriteHeader(http.StatusOK)
+		io.Copy(ioutil.Discard, r.Body)
 	})
 	http.HandleFunc("/garbage", func(w http.ResponseWriter, r *http.Request) {
 		cors(w)
@@ -131,7 +138,7 @@ func main() {
 		http.ServeFile(w, r, "speedtest_worker.js")
 	})
 
-	glog.Infof("Starting up...")
+	glog.Infof("Starting up at %v", flagBind)
 	err := http.ListenAndServe(flagBind, nil)
 	if err != nil {
 		glog.Exit(err)

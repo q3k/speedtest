@@ -21,8 +21,8 @@ Works with mobile versions too.
 
 ## Installation
 
-    go install github.com/q3k/speedtest
-    ./speedtest
+    go build -o srv github.com/q3k/speedtest/backend
+    ./srv
 
 ## Donate
 

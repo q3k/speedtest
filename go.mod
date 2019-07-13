@@ -1,4 +1,4 @@
-module github.com/q3k/speedtest/backend
+module github.com/q3k/speedtest
 
 go 1.12
 
