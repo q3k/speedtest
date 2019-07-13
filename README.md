@@ -1,13 +1,10 @@
-![HTML5 Speedtest Logo](https://github.com/adolfintel/speedtest/blob/master/.logo/Readme-Logo.png?raw=true)
-
 # HTML5 Speedtest
 
 No Flash, No Java, No Websocket, No Bullshit.
 
 This is a very lightweight Speedtest implemented in Javascript, using XMLHttpRequest and Web Workers.
 
-## Try it
-[Take a Speedtest](http://speedtest.fdossena.com)
+Forked from [adolfintel/speedtest](https://github.com/adolfintel/speedtest) to remove unnecessary features and implement Go backend for use at [bgp.wtf](http://bgp.wtf).
 
 ## Compatibility
 All modern browsers are supported: IE11, latest Edge, latest Chrome, latest Firefox, latest Safari.  
@@ -19,9 +16,6 @@ Works with mobile versions too.
 * Ping
 * Jitter
 
-![Screenshot](https://speedtest.fdossena.com/mpot_v5.gif)
-
-
 ## Server requirements
 * A machine that can run Go code.
 
@@ -31,11 +25,14 @@ Works with mobile versions too.
     ./speedtest
 
 ## Donate
+
+Support the original developer:
 [![Donate with Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/fdossena/donate)  
 [Donate with PayPal](https://www.paypal.me/sineisochronic)  
 
 ## License
 Copyright (C) 2016-2019 Federico Dossena
+
 Copyright (C) 2019 Serge Bazanski
 
 This program is free software: you can redistribute it and/or modify
