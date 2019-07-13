@@ -121,6 +121,15 @@ func main() {
 
 		json.NewEncoder(w).Encode(res)
 	})
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "index.html")
+	})
+	http.HandleFunc("/speedtest.js", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "speedtest.js")
+	})
+	http.HandleFunc("/speedtest_worker.js", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "speedtest_worker.js")
+	})
 
 	glog.Infof("Starting up...")
 	err := http.ListenAndServe(flagBind, nil)
