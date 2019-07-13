@@ -18,28 +18,17 @@ Works with mobile versions too.
 * Upload
 * Ping
 * Jitter
-* IP Address, ISP, distance from server (optional)
-* Telemetry (optional)
-* Results sharing (optional)
-* Multiple Points of Test (optional)
 
 ![Screenshot](https://speedtest.fdossena.com/mpot_v5.gif)
 
 
 ## Server requirements
-* A reasonably fast web server with Apache 2 (nginx, IIS also supported)
-* PHP 5.4 (other backends also available)
-* MySQL database to store test results (optional, PostgreSQL and SQLite also supported)
-* A fast! internet connection
+* A machine that can run Go code.
 
-## Installation videos
-* [Quick start installation guide for Ubuntu Server 19.04](https://fdossena.com/?p=speedtest/quickstart_v5_ubuntu.frag)
+## Installation
 
-## Docker
-Please see the `docker` branch
-
-## Node.js backend
-A Node.js implementation is available in the `node` branch, maintained by [dunklesToast](https://github.com/dunklesToast).
+    go install github.com/q3k/speedtest
+    ./speedtest
 
 ## Donate
 [![Donate with Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/fdossena/donate)  
@@ -47,6 +36,7 @@ A Node.js implementation is available in the `node` branch, maintained by [dunkl
 
 ## License
 Copyright (C) 2016-2019 Federico Dossena
+Copyright (C) 2019 Serge Bazanski
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
